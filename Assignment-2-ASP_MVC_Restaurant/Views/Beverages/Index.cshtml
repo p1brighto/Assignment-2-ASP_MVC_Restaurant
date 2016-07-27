@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Assignment_2_ASP_MVC_Restaurant.Models.Beverages>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BeveragesName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BeveragesShortDesc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BeveragesLongDesc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ThumbUrl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LargeUrl)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.BeveragesName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BeveragesShortDesc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BeveragesLongDesc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ThumbUrl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LargeUrl)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.BeveragesID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.BeveragesID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.BeveragesID })
+        </td>
+    </tr>
+}
+
+</table>

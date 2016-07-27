@@ -4,6 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+/**
+ * @author: Brighto Paul,Kuldeepsingh Jeewoololl
+ * @date: July 27, 2016
+ * version:1.0
+ * Description:
+ */
+
+
 namespace Assignment_2_ASP_MVC_Restaurant.Controllers
 {
     public class HomeController : Controller

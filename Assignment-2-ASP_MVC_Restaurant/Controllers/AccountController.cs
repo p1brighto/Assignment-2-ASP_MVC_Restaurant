@@ -10,6 +10,13 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Assignment_2_ASP_MVC_Restaurant.Models;
 
+/**
+ * @author: Brighto Paul,Kuldeepsingh Jeewoololl
+ * @date: July 27, 2016
+ * version:1.0
+ * Description:
+ */
+
 namespace Assignment_2_ASP_MVC_Restaurant.Controllers
 {
     [Authorize]
