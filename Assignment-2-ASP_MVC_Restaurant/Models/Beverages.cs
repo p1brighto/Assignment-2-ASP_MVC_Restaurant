@@ -27,6 +27,7 @@ namespace Assignment_2_ASP_MVC_Restaurant.Models
         public string BeveragesLongDesc { get; set; }
 
         [Display(Name = "Price")]
+        [DisplayFormat(DataFormatString = "{0:c}")]
         public int Price { get; set; }
 
         [Required]

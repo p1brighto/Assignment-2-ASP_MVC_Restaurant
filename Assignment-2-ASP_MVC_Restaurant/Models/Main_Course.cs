@@ -26,6 +26,7 @@ namespace Assignment_2_ASP_MVC_Restaurant.Models
         public string Main_CourseLongDesc { get; set; }
 
         [Display(Name = "Price")]
+        [DisplayFormat(DataFormatString = "{0:c}")]
         public int Price { get; set; }
 
         [Required]
