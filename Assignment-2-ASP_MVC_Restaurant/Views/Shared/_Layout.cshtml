@@ -20,12 +20,16 @@
                 @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
+                @Html.Partial("_LoginPartial")
+                <ul class="nav navbar-nav navbar-right">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Appetizers", "index", "Appetizers")</li>
+                    <li>@Html.ActionLink("Main Course", "index", "Main_Course")</li>
+                    <li>@Html.ActionLink("Beverages", "index", "Beverages")</li>
+                    <li>@Html.ActionLink("Desserts", "index", "Desserts")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
-                @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>

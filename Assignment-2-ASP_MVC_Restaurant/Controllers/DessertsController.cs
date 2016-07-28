@@ -37,6 +37,7 @@ namespace Assignment_2_ASP_MVC_Restaurant.Controllers
         }
 
         // GET: Desserts/Create
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -60,6 +61,7 @@ namespace Assignment_2_ASP_MVC_Restaurant.Controllers
         }
 
         // GET: Desserts/Edit/5
+        [Authorize]
         public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
@@ -91,6 +93,7 @@ namespace Assignment_2_ASP_MVC_Restaurant.Controllers
         }
 
         // GET: Desserts/Delete/5
+        [Authorize]
         public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)

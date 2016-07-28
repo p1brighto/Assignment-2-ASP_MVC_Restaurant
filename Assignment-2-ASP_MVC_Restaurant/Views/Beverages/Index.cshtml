@@ -8,7 +8,10 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @if (ViewContext.HttpContext.User.Identity.IsAuthenticated)
+    {
+        <a href="@Url.Action("Create")" class="btn btn-success" title="Add a new Beverage Item"> <i class="fa fa-plus"></i>Add new Beverage</a>
+    }
 </p>
 <table class="table">
     <tr>
@@ -19,46 +22,33 @@
             @Html.DisplayNameFor(model => model.BeveragesShortDesc)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.BeveragesLongDesc)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Price)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ThumbUrl)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LargeUrl)
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.BeveragesName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BeveragesShortDesc)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BeveragesLongDesc)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Price)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ThumbUrl)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LargeUrl)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.BeveragesID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.BeveragesID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.BeveragesID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BeveragesName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BeveragesShortDesc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                <a href="@Url.Action("Details", new { id=item.BeveragesID })" class="btn btn-primary" title="Details"> <i class="fa fa-info"></i> More info</a>
+
+                @if (ViewContext.HttpContext.User.Identity.IsAuthenticated)
+                {
+                    <a href="@Url.Action("Edit", new { id=item.BeveragesID })" class="btn btn-default" title="Edit"> <i class="fa fa-pencil"></i> Edit</a>
+                    <a href="@Url.Action("Delete", new { id=item.BeveragesID })" class="btn btn-danger" title="Delete"> <i class="fa fa-trash"></i> Delete</a>
+                }
+            </td>
+        </tr>
+    }
 
 </table>
