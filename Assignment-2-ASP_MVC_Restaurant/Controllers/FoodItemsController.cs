@@ -11,56 +11,59 @@ using Assignment_2_ASP_MVC_Restaurant.Models;
 
 namespace Assignment_2_ASP_MVC_Restaurant.Controllers
 {
-    public class BeveragesController : Controller
+    public class FoodItemsController : Controller
     {
         private RestaurantModel db = new RestaurantModel();
 
-        // GET: Beverages
+        // GET: FoodItems
         public async Task<ActionResult> Index()
         {
-            return View(await db.Beverages.ToListAsync());
+            var foodItems = db.FoodItems.Include(f => f.Food);
+            return View(await foodItems.ToListAsync());
         }
 
-        // GET: Beverages/Details/5
+        // GET: FoodItems/Details/5
         public async Task<ActionResult> Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Beverages beverages = await db.Beverages.FindAsync(id);
-            if (beverages == null)
+            FoodItem foodItem = await db.FoodItems.FindAsync(id);
+            if (foodItem == null)
             {
                 return HttpNotFound();
             }
-            return View(beverages);
+            return View(foodItem);
         }
 
-        // GET: Beverages/Create
+        // GET: FoodItems/Create
         [Authorize]
         public ActionResult Create()
         {
+            ViewBag.FoodType = new SelectList(db.Foods, "FoodType", "FoodType");
             return View();
         }
 
-        // POST: Beverages/Create
+        // POST: FoodItems/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "BeveragesID,BeveragesName,BeveragesShortDesc,BeveragesLongDesc,Price,ImageUrl")] Beverages beverages)
+        public async Task<ActionResult> Create([Bind(Include = "FoodItemID,FoodItemName,FoodType,ShortDesc,LongDesc,Price,ImageUrl")] FoodItem foodItem)
         {
             if (ModelState.IsValid)
             {
-                db.Beverages.Add(beverages);
+                db.FoodItems.Add(foodItem);
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
 
-            return View(beverages);
+            ViewBag.FoodType = new SelectList(db.Foods, "FoodType", "FoodType", foodItem.FoodType);
+            return View(foodItem);
         }
 
-        // GET: Beverages/Edit/5
+        // GET: FoodItems/Edit/5
         [Authorize]
         public async Task<ActionResult> Edit(int? id)
         {
@@ -68,31 +71,33 @@ namespace Assignment_2_ASP_MVC_Restaurant.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Beverages beverages = await db.Beverages.FindAsync(id);
-            if (beverages == null)
+            FoodItem foodItem = await db.FoodItems.FindAsync(id);
+            if (foodItem == null)
             {
                 return HttpNotFound();
             }
-            return View(beverages);
+            ViewBag.FoodType = new SelectList(db.Foods, "FoodType", "FoodType", foodItem.FoodType);
+            return View(foodItem);
         }
 
-        // POST: Beverages/Edit/5
+        // POST: FoodItems/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "BeveragesID,BeveragesName,BeveragesShortDesc,BeveragesLongDesc,Price,ImageUrl")] Beverages beverages)
+        public async Task<ActionResult> Edit([Bind(Include = "FoodItemID,FoodItemName,FoodType,ShortDesc,LongDesc,Price,ImageUrl")] FoodItem foodItem)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(beverages).State = EntityState.Modified;
+                db.Entry(foodItem).State = EntityState.Modified;
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            return View(beverages);
+            ViewBag.FoodType = new SelectList(db.Foods, "FoodType", "FoodType", foodItem.FoodType);
+            return View(foodItem);
         }
 
-        // GET: Beverages/Delete/5
+        // GET: FoodItems/Delete/5
         [Authorize]
         public async Task<ActionResult> Delete(int? id)
         {
@@ -100,21 +105,21 @@ namespace Assignment_2_ASP_MVC_Restaurant.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Beverages beverages = await db.Beverages.FindAsync(id);
-            if (beverages == null)
+            FoodItem foodItem = await db.FoodItems.FindAsync(id);
+            if (foodItem == null)
             {
                 return HttpNotFound();
             }
-            return View(beverages);
+            return View(foodItem);
         }
 
-        // POST: Beverages/Delete/5
+        // POST: FoodItems/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            Beverages beverages = await db.Beverages.FindAsync(id);
-            db.Beverages.Remove(beverages);
+            FoodItem foodItem = await db.FoodItems.FindAsync(id);
+            db.FoodItems.Remove(foodItem);
             await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }

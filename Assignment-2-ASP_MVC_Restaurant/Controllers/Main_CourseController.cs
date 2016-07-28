@@ -48,7 +48,7 @@ namespace Assignment_2_ASP_MVC_Restaurant.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "Main_CourseID,Main_CourseName,Main_CourseShortDesc,Main_CourseLongDesc,Price,ThumbUrl,LargeUrl")] Main_Course main_Course)
+        public async Task<ActionResult> Create([Bind(Include = "Main_CourseID,Main_CourseName,Main_CourseShortDesc,Main_CourseLongDesc,Price,ImageUrl")] Main_Course main_Course)
         {
             if (ModelState.IsValid)
             {
@@ -81,7 +81,7 @@ namespace Assignment_2_ASP_MVC_Restaurant.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "Main_CourseID,Main_CourseName,Main_CourseShortDesc,Main_CourseLongDesc,Price,ThumbUrl,LargeUrl")] Main_Course main_Course)
+        public async Task<ActionResult> Edit([Bind(Include = "Main_CourseID,Main_CourseName,Main_CourseShortDesc,Main_CourseLongDesc,Price,ImageUrl")] Main_Course main_Course)
         {
             if (ModelState.IsValid)
             {

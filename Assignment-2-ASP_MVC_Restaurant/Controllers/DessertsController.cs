@@ -48,7 +48,7 @@ namespace Assignment_2_ASP_MVC_Restaurant.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "DessertsID,DessertsName,DessertsShortDesc,DessertsLongDesc,Price,ThumbUrl,LargeUrl")] Desserts desserts)
+        public async Task<ActionResult> Create([Bind(Include = "DessertsID,DessertsName,DessertsShortDesc,DessertsLongDesc,Price,ImageUrl")] Desserts desserts)
         {
             if (ModelState.IsValid)
             {
@@ -81,7 +81,7 @@ namespace Assignment_2_ASP_MVC_Restaurant.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "DessertsID,DessertsName,DessertsShortDesc,DessertsLongDesc,Price,ThumbUrl,LargeUrl")] Desserts desserts)
+        public async Task<ActionResult> Edit([Bind(Include = "DessertsID,DessertsName,DessertsShortDesc,DessertsLongDesc,Price,ImageUrl")] Desserts desserts)
         {
             if (ModelState.IsValid)
             {

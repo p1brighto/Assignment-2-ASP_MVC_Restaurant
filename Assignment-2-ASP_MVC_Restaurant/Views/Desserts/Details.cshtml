@@ -20,14 +20,6 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.DessertsShortDesc)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DessertsShortDesc)
-        </dd>
-
-        <dt>
             @Html.DisplayNameFor(model => model.DessertsLongDesc)
         </dt>
 
@@ -43,22 +35,10 @@
             @Html.DisplayFor(model => model.Price)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ThumbUrl)
-        </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.ThumbUrl)
+            <img src="@Html.DisplayFor(model => model.ImageUrl)" class="img-rounded" width="304" height="236">
         </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.LargeUrl)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.LargeUrl)
-        </dd>
-
+ 
     </dl>
 </div>
 <p>

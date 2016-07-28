@@ -32,12 +32,7 @@ namespace Assignment_2_ASP_MVC_Restaurant.Models
 
         [Required]
         [StringLength(50)]
-        [Display(Name = "Thumbnail Url")]
-        public string ThumbUrl { get; set; }
-
-        [Required]
-        [StringLength(50)]
-        [Display(Name = "Large Image Url")]
-        public string LargeUrl { get; set; }
+        [Display(Name = "Image Url")]
+        public string ImageUrl { get; set; }
     }
 }

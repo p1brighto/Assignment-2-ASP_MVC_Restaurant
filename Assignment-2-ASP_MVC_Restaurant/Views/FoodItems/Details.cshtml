@@ -1,4 +1,4 @@
-﻿@model Assignment_2_ASP_MVC_Restaurant.Models.Beverages
+﻿@model Assignment_2_ASP_MVC_Restaurant.Models.FoodItem
 
 @{
     ViewBag.Title = "Details";
@@ -8,31 +8,31 @@
 <h2>Details</h2>
 
 <div>
-    <h4>Beverages</h4>
+    <h4>FoodItem</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.BeveragesName)
+            @Html.DisplayNameFor(model => model.Food.FoodType)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.BeveragesName)
+            @Html.DisplayFor(model => model.Food.FoodType)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.BeveragesShortDesc)
+            @Html.DisplayNameFor(model => model.FoodItemName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.BeveragesShortDesc)
+            @Html.DisplayFor(model => model.FoodItemName)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.BeveragesLongDesc)
+            @Html.DisplayNameFor(model => model.LongDesc)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.BeveragesLongDesc)
+            @Html.DisplayFor(model => model.LongDesc)
         </dd>
 
         <dt>
@@ -46,10 +46,9 @@
         <dd>
             <img src="@Html.DisplayFor(model => model.ImageUrl)" class="img-rounded" width="304" height="236">
         </dd>
- 
+
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.BeveragesID }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

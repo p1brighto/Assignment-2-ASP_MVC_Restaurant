@@ -32,11 +32,7 @@ namespace Assignment_2_ASP_MVC_Restaurant.Models
                 .IsUnicode(false);
 
             modelBuilder.Entity<Appetizer>()
-                .Property(e => e.ThumbUrl)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Appetizer>()
-                .Property(e => e.LargeUrl)
+                .Property(e => e.ImageUrl)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Beverages>()
@@ -52,11 +48,7 @@ namespace Assignment_2_ASP_MVC_Restaurant.Models
                 .IsUnicode(false);
 
             modelBuilder.Entity<Beverages>()
-                .Property(e => e.ThumbUrl)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Beverages>()
-                .Property(e => e.LargeUrl)
+                .Property(e => e.ImageUrl)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Desserts>()
@@ -72,13 +64,9 @@ namespace Assignment_2_ASP_MVC_Restaurant.Models
                 .IsUnicode(false);
 
             modelBuilder.Entity<Desserts>()
-                .Property(e => e.ThumbUrl)
+                .Property(e => e.ImageUrl)
                 .IsUnicode(false);
-
-            modelBuilder.Entity<Desserts>()
-                .Property(e => e.LargeUrl)
-                .IsUnicode(false);
-
+ 
             modelBuilder.Entity<Main_Course>()
                 .Property(e => e.Main_CourseName)
                 .IsUnicode(false);
@@ -92,12 +80,13 @@ namespace Assignment_2_ASP_MVC_Restaurant.Models
                 .IsUnicode(false);
 
             modelBuilder.Entity<Main_Course>()
-                .Property(e => e.ThumbUrl)
+                .Property(e => e.ImageUrl)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Main_Course>()
-                .Property(e => e.LargeUrl)
-                .IsUnicode(false);
         }
+
+        public System.Data.Entity.DbSet<Assignment_2_ASP_MVC_Restaurant.Models.FoodItem> FoodItems { get; set; }
+
+        public System.Data.Entity.DbSet<Assignment_2_ASP_MVC_Restaurant.Models.Food> Foods { get; set; }
     }
 }

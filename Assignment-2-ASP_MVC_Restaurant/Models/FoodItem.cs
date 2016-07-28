@@ -6,24 +6,29 @@ namespace Assignment_2_ASP_MVC_Restaurant.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Main_Course
+    public partial class FoodItem
     {
-        public int Main_CourseID { get; set; }
+        public int FoodItemID { get; set; }
 
         [Required]
         [StringLength(50)]
         [Display(Name = "Name")]
-        public string Main_CourseName { get; set; }
+        public string FoodItemName { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        [Display(Name = "Food Type")]
+        public string FoodType { get; set; }
 
         [Required]
         [StringLength(50)]
         [Display(Name = "Description")]
-        public string Main_CourseShortDesc { get; set; }
+        public string ShortDesc { get; set; }
 
         [Required]
         [StringLength(100)]
         [Display(Name = "Detailed Description")]
-        public string Main_CourseLongDesc { get; set; }
+        public string LongDesc { get; set; }
 
         [Display(Name = "Price")]
         [DisplayFormat(DataFormatString = "{0:c}")]
@@ -31,7 +36,9 @@ namespace Assignment_2_ASP_MVC_Restaurant.Models
 
         [Required]
         [StringLength(50)]
-        [Display(Name = "Image Url")]
+        [Display(Name = "Image URL")]
         public string ImageUrl { get; set; }
+
+        public virtual Food Food { get; set; }
     }
 }

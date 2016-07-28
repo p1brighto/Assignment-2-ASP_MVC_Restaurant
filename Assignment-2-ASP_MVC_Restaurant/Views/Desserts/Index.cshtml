@@ -5,16 +5,19 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Desserts</h2>
 
 <p>
     @if (ViewContext.HttpContext.User.Identity.IsAuthenticated)
     {
-        <a href="@Url.Action("Create")" class="btn btn-success" title="Add a new Dessert Item"> <i class="fa fa-plus"></i>Add new Dessert</a>
+        <a href="@Url.Action("Create")" class="btn btn-success" title="Add a new Dessert Item"> <i class="fa fa-plus"></i> Add new Dessert</a>
     }
 </p>
 <table class="table">
     <tr>
+        <th>
+
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.DessertsName)
         </th>
@@ -30,6 +33,9 @@
     @foreach (var item in Model)
     {
         <tr>
+            <td>
+                <img src="@Html.DisplayFor(modelItem => item.ImageUrl)" class="img-thumbnail" width="100" height="120" />
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.DessertsName)
             </td>
