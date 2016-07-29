@@ -1,24 +1,17 @@
-﻿@model Assignment_2_ASP_MVC_Restaurant.Models.FoodItem
+﻿@using Assignment_2_ASP_MVC_Restaurant.Models
+@model FoodItem
 
 @{
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<h2>Menu: @Model.FoodItemName</h2>
 
 <div>
-    <h4>FoodItem</h4>
+    <h4>Desserts</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Food.FoodType)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Food.FoodType)
-        </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.FoodItemName)
         </dt>
@@ -46,9 +39,8 @@
         <dd>
             <img src="@Html.DisplayFor(model => model.ImageUrl)" class="img-rounded" width="304" height="236">
         </dd>
-
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Back to List", "Index", new { type = Model.FoodType })
+    @Html.ActionLink("Back to List", "Browse")
 </p>

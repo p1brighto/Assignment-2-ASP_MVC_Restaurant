@@ -16,10 +16,23 @@ namespace Assignment_2_ASP_MVC_Restaurant.Controllers
         private RestaurantModel db = new RestaurantModel();
 
         // GET: FoodItems
-        public async Task<ActionResult> Index()
+        public async Task<ActionResult> Index(string type=null)
         {
-            var foodItems = db.FoodItems.Include(f => f.Food);
-            return View(await foodItems.ToListAsync());
+   
+            if (type != null)
+            {
+              var   foodItems = from a in db.FoodItems
+                                where a.FoodType == type
+                                select a;
+                return View(await foodItems.ToListAsync());
+            }
+            else
+            {
+               var foodItems = db.FoodItems.Include(f => f.Food);
+
+                return View(await foodItems.ToListAsync());
+            }
+
         }
 
         // GET: FoodItems/Details/5
@@ -91,7 +104,7 @@ namespace Assignment_2_ASP_MVC_Restaurant.Controllers
             {
                 db.Entry(foodItem).State = EntityState.Modified;
                 await db.SaveChangesAsync();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", new { type = foodItem.FoodType });
             }
             ViewBag.FoodType = new SelectList(db.Foods, "FoodType", "FoodType", foodItem.FoodType);
             return View(foodItem);
@@ -121,7 +134,7 @@ namespace Assignment_2_ASP_MVC_Restaurant.Controllers
             FoodItem foodItem = await db.FoodItems.FindAsync(id);
             db.FoodItems.Remove(foodItem);
             await db.SaveChangesAsync();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", new { type = foodItem.FoodType });
         }
 
         protected override void Dispose(bool disposing)

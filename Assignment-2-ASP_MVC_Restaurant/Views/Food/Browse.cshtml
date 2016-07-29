@@ -1,0 +1,59 @@
+﻿@using Assignment_2_ASP_MVC_Restaurant.Models
+@model Food
+
+@{
+    ViewBag.Title = "Browse";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Browsing Genre: @Model.FoodType</h2>
+
+<ul>
+    @foreach (FoodItem food in Model.FoodItems)
+    {
+        <li>
+            @Html.ActionLink(food.FoodItemName, "Details", new { id = food.FoodItemID })
+        </li>
+    }
+</ul>
+
+<table class="table">
+    <tr>
+        <th>
+
+        </th>
+        <th>
+            Name
+         </th>
+        <th>
+            Description
+        </th>
+        <th>
+            Price
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.FoodItems)
+    {
+        <tr>
+            <td>
+                <img src="@Html.DisplayFor(modelItem => item.ImageUrl)" class="img-thumbnail" width="100" height="120" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FoodItemName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShortDesc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                <a href="@Url.Action("Details", new { id=item.FoodItemID })" class="btn btn-primary" title="Details"> <i class="fa fa-info"></i> More info</a>
+            </td>
+
+        </tr>
+    }
+
+</table>

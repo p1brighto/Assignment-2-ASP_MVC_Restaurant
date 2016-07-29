@@ -23,10 +23,10 @@
                 @Html.Partial("_LoginPartial")
                 <ul class="nav navbar-nav navbar-right">
                     <li class="@(ViewBag.Title.ToString() == "Home Page" ? "active" : "")"><a href="@Url.Action("Index","Home")"><i class="fa fa-home fa-lg"></i> Home</a></li>
-                    <li class="@(ViewBag.Title.ToString() == "Appetizers" ? "active" : "")"><a href="@Url.Action("Index","Appetizers")">Appetizers</a></li>
-                    <li class="@(ViewBag.Title.ToString() == "Main" ? "active" : "")"><a href="@Url.Action("Index","Main_Course")">Main Course</a></li>
-                    <li class="@(ViewBag.Title.ToString() == "Beverages" ? "active" : "")"><a href="@Url.Action("Index","Beverages")">Beverages</a></li>
-                    <li class="@(ViewBag.Title.ToString() == "Desserts" ? "active" : "")"><a href="@Url.Action("Index","Desserts")">Desserts</a></li>
+                    @if (ViewContext.HttpContext.User.Identity.IsAuthenticated)
+                    {
+                        <li class="@(ViewBag.Title.ToString() == "Menu" ? "active" : "")"><a href="@Url.Action("Index","FoodItems")"><i class="fa fa-home fa-lg"></i> Dashboard</a></li>
+                    }
                     <li class="@(ViewBag.Title.ToString() == "Contact" ? "active" : "")"><a href="@Url.Action("Contact","Home")"><i class="fa fa-phone fa-lg"></i> Contact</a></li>
                     <li class="@(ViewBag.Title.ToString() == "About" ? "active" : "")"><a href="@Url.Action("About","Home")"><i class="fa fa-info fa-lg"></i> About</a></li>
                 </ul>
