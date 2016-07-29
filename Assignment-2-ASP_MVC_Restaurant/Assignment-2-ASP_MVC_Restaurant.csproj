@@ -171,28 +171,18 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\AppetizersController.cs" />
-    <Compile Include="Controllers\BeveragesController.cs" />
-    <Compile Include="Controllers\DessertsController.cs" />
-    <Compile Include="Controllers\FoodController.cs" />
     <Compile Include="Controllers\FoodItemsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\Main_CourseController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Appetizer.cs" />
-    <Compile Include="Models\Beverages.cs" />
-    <Compile Include="Models\Desserts.cs" />
     <Compile Include="Models\Food.cs" />
     <Compile Include="Models\FoodItem.cs" />
     <Compile Include="Models\FoodModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\Main_Course.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\RestaurantModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -275,35 +265,12 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Appetizers\Create.cshtml" />
-    <Content Include="Views\Appetizers\Delete.cshtml" />
-    <Content Include="Views\Appetizers\Details.cshtml" />
-    <Content Include="Views\Appetizers\Edit.cshtml" />
-    <Content Include="Views\Appetizers\Index.cshtml" />
-    <Content Include="Views\Main_Course\Create.cshtml" />
-    <Content Include="Views\Main_Course\Delete.cshtml" />
-    <Content Include="Views\Main_Course\Details.cshtml" />
-    <Content Include="Views\Main_Course\Edit.cshtml" />
-    <Content Include="Views\Main_Course\Index.cshtml" />
-    <Content Include="Views\Beverages\Create.cshtml" />
-    <Content Include="Views\Beverages\Delete.cshtml" />
-    <Content Include="Views\Beverages\Details.cshtml" />
-    <Content Include="Views\Beverages\Edit.cshtml" />
-    <Content Include="Views\Beverages\Index.cshtml" />
-    <Content Include="Views\Desserts\Create.cshtml" />
-    <Content Include="Views\Desserts\Delete.cshtml" />
-    <Content Include="Views\Desserts\Details.cshtml" />
-    <Content Include="Views\Desserts\Edit.cshtml" />
-    <Content Include="Views\Desserts\Index.cshtml" />
     <Content Include="Views\FoodItems\Create.cshtml" />
     <Content Include="Views\FoodItems\Delete.cshtml" />
     <Content Include="Views\FoodItems\Details.cshtml" />
     <Content Include="Views\FoodItems\Edit.cshtml" />
     <Content Include="Views\FoodItems\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Food\Index.cshtml" />
-    <Content Include="Views\Food\Browse.cshtml" />
-    <Content Include="Views\Food\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

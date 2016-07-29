@@ -170,7 +170,7 @@ namespace Assignment_2_ASP_MVC_Restaurant.Controllers
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "FoodItem");
                 }
                 AddErrors(result);
             }
@@ -456,7 +456,7 @@ namespace Assignment_2_ASP_MVC_Restaurant.Controllers
             {
                 return Redirect(returnUrl);
             }
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "FoodItems");
         }
 
         internal class ChallengeResult : HttpUnauthorizedResult

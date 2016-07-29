@@ -50,5 +50,12 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Back to List", "Index", new { type = Model.FoodType })
+    @if (ViewContext.HttpContext.User.Identity.IsAuthenticated)
+    {
+        @Html.ActionLink("Back to List", "Index")
+    }
+    else
+    {
+        @Html.ActionLink("Back to List", "Index", new { type = Model.FoodType })
+    }
 </p>

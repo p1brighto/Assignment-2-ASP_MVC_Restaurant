@@ -13,7 +13,7 @@ namespace Assignment_2_ASP_MVC_Restaurant.Controllers
 {
     public class FoodItemsController : Controller
     {
-        private RestaurantModel db = new RestaurantModel();
+        private FoodModel db = new FoodModel();
 
         // GET: FoodItems
         public async Task<ActionResult> Index(string type=null)
@@ -104,7 +104,7 @@ namespace Assignment_2_ASP_MVC_Restaurant.Controllers
             {
                 db.Entry(foodItem).State = EntityState.Modified;
                 await db.SaveChangesAsync();
-                return RedirectToAction("Index", new { type = foodItem.FoodType });
+                return RedirectToAction("Index");
             }
             ViewBag.FoodType = new SelectList(db.Foods, "FoodType", "FoodType", foodItem.FoodType);
             return View(foodItem);
@@ -134,7 +134,7 @@ namespace Assignment_2_ASP_MVC_Restaurant.Controllers
             FoodItem foodItem = await db.FoodItems.FindAsync(id);
             db.FoodItems.Remove(foodItem);
             await db.SaveChangesAsync();
-            return RedirectToAction("Index", new { type = foodItem.FoodType });
+            return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)

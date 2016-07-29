@@ -1,8 +1,17 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Home Page";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>This is the Home Page</h2>
 
+<h3>Browse Genres</h3>
+<p>
+    Select from 
+    genres:
+</p>
+<ul>
+    <li>@Html.ActionLink("Appetizers", "Index","FoodItems", new {type = "Appetizers"},null)</li>
+    <li>@Html.ActionLink("Beverages", "Index", "FoodItems", new { type = "Beverages" }, null)</li>
+    <li>@Html.ActionLink("Main Course", "Index", "FoodItems", new { type = "MainCourse" }, null)</li>
+    <li>@Html.ActionLink("Desserts", "Index", "FoodItems", new { type = "Desserts" }, null)</li>
+</ul>
