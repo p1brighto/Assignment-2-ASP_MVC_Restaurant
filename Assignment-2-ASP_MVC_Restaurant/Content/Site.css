@@ -175,7 +175,7 @@ No row Margin
     
 
 .main-banner {
-    background-image: url('../Assets/Images/bg-food.jpg');
+    background-image: url('/Assets/Images/bg-food.jpg');
     background-size: cover;
     background-attachment: fixed;
     padding-top: 80px;
