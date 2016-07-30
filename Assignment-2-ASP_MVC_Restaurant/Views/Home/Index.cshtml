@@ -3,15 +3,55 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<section class="section banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 banner-text">
+                <h1>Welcome to La Kuisine!</h1>
+                <p>Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Curabitur aliquet quam id dui posuere blandit. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Proin eget tortor risus.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-<h3>Browse Genres</h3>
-<p>
-    Select from 
-    genres:
-</p>
-<ul>
-    <li>@Html.ActionLink("Appetizers", "Index","FoodItems", new {type = "Appetizers"},null)</li>
-    <li>@Html.ActionLink("Beverages", "Index", "FoodItems", new { type = "Beverages" }, null)</li>
-    <li>@Html.ActionLink("Main Course", "Index", "FoodItems", new { type = "MainCourse" }, null)</li>
-    <li>@Html.ActionLink("Desserts", "Index", "FoodItems", new { type = "Desserts" }, null)</li>
-</ul>
+<section class="home-choice">
+    <div class="container">
+        <div class="row bg-white no-gutter shadow">
+            <div class="col-md-3">
+                <div class="home-thumb appetizer-bg">
+                    <h4>@Html.ActionLink("Appetizers", "Index", "FoodItems", new { type = "Appetizers" }, null)</h4>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="home-thumb beverages-bg">
+                    <h4>@Html.ActionLink("Beverages", "Index", "FoodItems", new { type = "Beverages" }, null)</h4>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="home-thumb main-course-bg">
+                    <h4>@Html.ActionLink("Main Course", "Index", "FoodItems", new { type = "MainCourse" }, null)</h4>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="home-thumb dessert-bg">
+                    <h4>@Html.ActionLink("Desserts", "Index", "FoodItems", new { type = "Desserts" }, null)</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="main-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h2>La Kuisine</h2>
+                <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Donec sollicitudin molestie malesuada. Sed porttitor lectus nibh. Pellentesque in ipsum id orci porta dapibus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
+                <p>Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Sed porttitor lectus nibh. Sed porttitor lectus nibh. Nulla porttitor accumsan tincidunt. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.</p>
+            </div>
+            <div class="col-md-4">
+
+            </div>
+        </div>
+    </div>
+</section>
