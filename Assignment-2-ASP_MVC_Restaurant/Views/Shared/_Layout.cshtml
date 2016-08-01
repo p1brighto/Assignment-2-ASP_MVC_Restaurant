@@ -27,7 +27,7 @@
                     <li class="@(ViewBag.Title.ToString() == "Contact" ? "active" : "")"><a href="@Url.Action("Contact","Home")">Contact</a></li>
                     @if (ViewContext.HttpContext.User.Identity.IsAuthenticated)
                     {
-                        <li class="@(ViewBag.Title.ToString() == "Menu" ? "active" : "")"><a href="@Url.Action("Index","FoodItems")">Dashboard</a></li>
+                        <li class="@(ViewBag.Title.ToString() == "Dashboard" ? "active" : "")"><a href="@Url.Action("Index","FoodItems")">Dashboard</a></li>
                     }
                 </ul>
             </div>

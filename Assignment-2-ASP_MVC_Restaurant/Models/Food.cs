@@ -20,6 +20,7 @@ namespace Assignment_2_ASP_MVC_Restaurant.Models
 
         [Key]
         [StringLength(50)]
+        [Display(Name = "Food Type")]
         public string FoodType { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
