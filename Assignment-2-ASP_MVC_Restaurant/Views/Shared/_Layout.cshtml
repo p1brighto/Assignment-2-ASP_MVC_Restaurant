@@ -25,8 +25,8 @@
                 @Html.Partial("_LoginPartial")
                 <ul class="nav navbar-nav navbar-right">
                     <li class="@(ViewBag.Title.ToString() == "Home Page" ? "active" : "")"><a href="@Url.Action("Index","Home")">Home</a></li>
-                    <li class="@(ViewBag.Title.ToString() == "About" ? "active" : "")"><a href="@Url.Action("About","Home")">About</a></li>
-                    <li class="@(ViewBag.Title.ToString() == "Contact" ? "active" : "")"><a href="@Url.Action("Contact","Home")">Contact</a></li>
+                    <li class="@(ViewBag.Title.ToString() == "About Us" ? "active" : "")"><a href="@Url.Action("About","Home")">About</a></li>
+                    <li class="@(ViewBag.Title.ToString() == "Get in Touch" ? "active" : "")"><a href="@Url.Action("Contact","Home")">Contact</a></li>
                     @if (ViewContext.HttpContext.User.Identity.IsAuthenticated)
                     {
                         <li class="@(ViewBag.Title.ToString() == "Dashboard" ? "active" : "")"><a href="@Url.Action("Index","FoodItems")">Dashboard</a></li>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assignment_2_ASP_MVC_Restaurant.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,6 +17,8 @@ namespace Assignment_2_ASP_MVC_Restaurant.Controllers
 {
     public class HomeController : Controller
     {
+        private FoodModel db = new FoodModel();
+
         public ActionResult Index()
         {
             return View();

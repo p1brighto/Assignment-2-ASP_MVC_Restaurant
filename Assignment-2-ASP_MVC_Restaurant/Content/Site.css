@@ -149,19 +149,19 @@ No row Margin
         }
         
         .appetizer-bg {
-            background-image: url('../Assets/Images/appetizers.jpg');
+            background-image: url('/Assets/Images/appetizers.jpg');
         }
 
         .beverages-bg {
-            background-image: url('../Assets/Images/beverages.jpg');
+            background-image: url('/Assets/Images/beverages.jpg');
         }
 
         .main-course-bg {
-            background-image: url('../Assets/Images/main-course.jpg');
+            background-image: url('/Assets/Images/main-course.jpg');
         }
 
         .dessert-bg {
-            background-image: url('../Assets/Images/dessert.jpg');
+            background-image: url('/Assets/Images/dessert.jpg');
         }
 
         .home-thumb h4 {
