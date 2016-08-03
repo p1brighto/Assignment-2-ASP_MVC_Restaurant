@@ -188,13 +188,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Images\appetizers.jpg" />
+    <Content Include="Assets\Images\Appetizer\salmon.jpg" />
     <Content Include="Assets\Images\beverages.jpg" />
+    <Content Include="Assets\Images\Beverages\peach.jpg" />
+    <Content Include="Assets\Images\Beverages\salmon.jpg" />
     <Content Include="Assets\Images\dessert.jpg" />
     <Content Include="Assets\Images\Appetizer\test.jpeg" />
     <Content Include="Assets\Images\Beverages\test.jpeg" />
     <Content Include="Assets\Images\bg-food.jpg" />
+    <Content Include="Assets\Images\Desserts\peach.jpg" />
+    <Content Include="Assets\Images\Desserts\salmon.jpg" />
     <Content Include="Assets\Images\Desserts\test.jpeg" />
     <Content Include="Assets\Images\logo.png" />
+    <Content Include="Assets\Images\Main_Course\peach.jpg" />
+    <Content Include="Assets\Images\Main_Course\salmon.jpg" />
     <Content Include="Assets\Images\Main_Course\test.jpg" />
     <Content Include="Assets\Images\main-course.jpg" />
     <Content Include="Content\bootstrap-theme.css" />

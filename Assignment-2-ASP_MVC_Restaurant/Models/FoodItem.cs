@@ -21,18 +21,18 @@ namespace Assignment_2_ASP_MVC_Restaurant.Models
         public string FoodType { get; set; }
 
         [Required]
-        [StringLength(50)]
+        [StringLength(100)]
         [Display(Name = "Description")]
         public string ShortDesc { get; set; }
 
         [Required]
-        [StringLength(100)]
+        [StringLength(200)]
         [Display(Name = "Detailed Description")]
         public string LongDesc { get; set; }
 
         [Display(Name = "Price")]
         [DisplayFormat(DataFormatString = "{0:c}")]
-        public int Price { get; set; }
+        public decimal Price { get; set; }
 
         [Required]
         [StringLength(50)]
