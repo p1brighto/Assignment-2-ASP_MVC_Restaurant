@@ -11,6 +11,7 @@ using Assignment_2_ASP_MVC_Restaurant.Models;
 
 namespace Assignment_2_ASP_MVC_Restaurant.Controllers
 {
+    [Authorize]
     public class FoodItemsController : Controller
     {
         private FoodModel db = new FoodModel();
@@ -51,7 +52,6 @@ namespace Assignment_2_ASP_MVC_Restaurant.Controllers
         }
 
         // GET: FoodItems/Create
-        [Authorize]
         public ActionResult Create()
         {
             ViewBag.FoodType = new SelectList(db.Foods, "FoodType", "FoodType");
@@ -77,7 +77,6 @@ namespace Assignment_2_ASP_MVC_Restaurant.Controllers
         }
 
         // GET: FoodItems/Edit/5
-        [Authorize]
         public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
@@ -111,7 +110,6 @@ namespace Assignment_2_ASP_MVC_Restaurant.Controllers
         }
 
         // GET: FoodItems/Delete/5
-        [Authorize]
         public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)

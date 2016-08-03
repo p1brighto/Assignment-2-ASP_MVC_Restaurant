@@ -1,6 +1,10 @@
-﻿@{
+﻿@using Assignment_2_ASP_MVC_Restaurant.Models;
+@model IEnumerable<Food>
+
+@{
     ViewBag.Title = "Home Page";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    int count = 0; string Class="";
 }
 
 <section class="section banner">
@@ -17,26 +21,23 @@
 <section class="home-choice">
     <div class="container">
         <div class="row bg-white no-gutter shadow">
-            <div class="col-md-3">
-                <div class="home-thumb appetizer-bg">
-                    <h4>@Html.ActionLink("Appetizers", "Index", "FoodItems", new { type = "Appetizer" }, null)</h4>
+            @foreach (Food items in Model)
+            {
+                switch (count)
+                {
+                    case 0: Class = "appetizer-bg"; break;
+                    case 1: Class = "beverages-bg"; break;
+                    case 2: Class = "main-course-bg"; break;
+                    case 3: Class = "dessert-bg"; break;
+                }
+                <div class="col-md-3">
+                    <div class="home-thumb @Class" >
+                        <h4>@Html.ActionLink(items.FoodType, "Browse", new { type = items.FoodType })</h4>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-3">
-                <div class="home-thumb beverages-bg">
-                    <h4>@Html.ActionLink("Beverages", "Index", "FoodItems", new { type = "Beverages" }, null)</h4>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="home-thumb main-course-bg">
-                    <h4>@Html.ActionLink("Main Course", "Index", "FoodItems", new { type = "MainCourse" }, null)</h4>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="home-thumb dessert-bg">
-                    <h4>@Html.ActionLink("Desserts", "Index", "FoodItems", new { type = "Desserts" }, null)</h4>
-                </div>
-            </div>
+                count++;
+            }
+
         </div>
     </div>
 </section>

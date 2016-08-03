@@ -1,9 +1,13 @@
-﻿using Assignment_2_ASP_MVC_Restaurant.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
 using System.Linq;
+using System.Threading.Tasks;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Assignment_2_ASP_MVC_Restaurant.Models;
 
 /**
  * @author: Brighto Paul,Kuldeepsingh Jeewoololl
@@ -17,11 +21,37 @@ namespace Assignment_2_ASP_MVC_Restaurant.Controllers
 {
     public class HomeController : Controller
     {
-        private FoodModel db = new FoodModel();
+       FoodModel db = new FoodModel();
 
+        // GET: Index
         public ActionResult Index()
         {
-            return View();
+            List<Food> foods = db.Foods.ToList();
+
+            return View(foods);
+        }
+        // GET: FoodItems
+        public async Task<ActionResult> Browse(string type = "Appetizers")
+        {
+            var foodItems = from a in db.FoodItems
+                            where a.FoodType == type
+                            select a;
+            return View(await foodItems.ToListAsync());
+        }
+
+        // GET: FoodItems/Details/5
+        public async Task<ActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            FoodItem foodItem = await db.FoodItems.FindAsync(id);
+            if (foodItem == null)
+            {
+                return HttpNotFound();
+            }
+            return View(foodItem);
         }
 
         public ActionResult About()

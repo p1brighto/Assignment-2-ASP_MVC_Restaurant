@@ -1,8 +1,7 @@
 ﻿@model IEnumerable<Assignment_2_ASP_MVC_Restaurant.Models.FoodItem>
 
 @{
-
-    ViewBag.Title = "Dashboard";
+    ViewBag.Title = "Menu";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -20,7 +19,6 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <a href="@Url.Action("Create")" class="btn btn-success" title="Add new Appetizer"> <i class="fa fa-plus"></i> Add new Item</a>
             </div>
             <div class="col-md-12">
 
@@ -56,8 +54,6 @@
                             </td>
                             <td>
                                 <a href="@Url.Action("Details", new { id=item.FoodItemID })" class="btn btn-primary" title="Details"> <i class="fa fa-info"></i> More info</a>
-                                <a href="@Url.Action("Edit", new { id=item.FoodItemID })" class="btn btn-default" title="Edit"> <i class="fa fa-pencil"></i> Edit</a>
-                                <a href="@Url.Action("Delete", new { id=item.FoodItemID })" class="btn btn-danger" title="Delete"> <i class="fa fa-trash"></i> Delete</a>
                             </td>
                         </tr>
                     }
@@ -67,3 +63,4 @@
         </div>
     </div>
 </section>
+
