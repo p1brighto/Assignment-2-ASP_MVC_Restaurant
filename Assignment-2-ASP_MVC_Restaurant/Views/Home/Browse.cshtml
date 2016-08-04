@@ -1,10 +1,13 @@
 ﻿@model IEnumerable<Assignment_2_ASP_MVC_Restaurant.Models.FoodItem>
 
 @{
-    ViewBag.Title = "Menu";
+    //getting title
+    string title= null;
+    foreach (var item in Model)
+    { title = item.FoodType; }
+    ViewBag.Title = title;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 <section class="main-banner">
     <div class="container">
         <div class="row">

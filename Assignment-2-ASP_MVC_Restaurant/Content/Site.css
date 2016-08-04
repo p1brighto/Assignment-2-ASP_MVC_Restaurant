@@ -148,19 +148,19 @@ No row Margin
             color: #FFF
         }
         
-        .appetizer-bg {
+        .Appetizer-bg {
             background-image: url('/Assets/Images/appetizers.jpg');
         }
 
-        .beverages-bg {
+        .Beverages-bg {
             background-image: url('/Assets/Images/beverages.jpg');
         }
 
-        .main-course-bg {
+        .MainCourse-bg {
             background-image: url('/Assets/Images/main-course.jpg');
         }
 
-        .dessert-bg {
+        .Desserts-bg {
             background-image: url('/Assets/Images/dessert.jpg');
         }
 

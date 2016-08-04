@@ -4,7 +4,6 @@
 @{
     ViewBag.Title = "Home Page";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    int count = 0; string Class="";
 }
 
 <section class="section banner">
@@ -23,19 +22,11 @@
         <div class="row bg-white no-gutter shadow">
             @foreach (Food items in Model)
             {
-                switch (count)
-                {
-                    case 0: Class = "appetizer-bg"; break;
-                    case 1: Class = "beverages-bg"; break;
-                    case 2: Class = "main-course-bg"; break;
-                    case 3: Class = "dessert-bg"; break;
-                }
                 <div class="col-md-3">
-                    <div class="home-thumb @Class" >
+                    <div class="home-thumb @items.FoodType-bg" >
                         <h4>@Html.ActionLink(items.FoodType, "Browse", new { type = items.FoodType })</h4>
                     </div>
                 </div>
-                count++;
             }
 
         </div>
