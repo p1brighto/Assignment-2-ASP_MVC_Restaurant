@@ -36,6 +36,7 @@ namespace Assignment_2_ASP_MVC_Restaurant.Controllers
             var foodItems = from a in db.FoodItems
                             where a.FoodType == type
                             select a;
+            ViewBag.Title = type;
             return View(await foodItems.ToListAsync());
         }
 
